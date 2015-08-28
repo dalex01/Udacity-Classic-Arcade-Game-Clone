@@ -1,3 +1,12 @@
+// app.js
+// This file provides the main objects of the game and all
+// their properties. In this file is described the following
+// objects:
+// Enemy - players enemy
+// Player - character who plays the game
+// Item - different recourses appear on the field
+// Score - score of the game and usefull information
+
 // Enemies our player must avoid
 var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,

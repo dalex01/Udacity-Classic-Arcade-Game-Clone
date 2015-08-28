@@ -6,6 +6,9 @@ Game is optimized for the screens with Y resolution (height) not less than 1080 
 
 ## Start
 
+* download all game files locally and start index.html file
+* or simply go to start page and play: http://dalex01.github.io/Udacity-Classic-Arcade-Game-Clone/
+
 To choose character press number from 1 to 5
 
 ## Movement
@@ -40,3 +43,13 @@ To collect each type of item 3 times and to reach water 3 times
 Remember that Rock could be removed from field only after collision with player.
 Rock holds one item place on the field. So it is possible that 4 Rocks will be placed on the field and you could not collect any items. So you should you life to remove Rocks.
 Hearts give you new life if you have less that 5. It is usefull keep Hearts on the field until you have one-two life or you want to remove Rock from the field.
+
+# Repository
+
+* index.html: The main HTML document. Contains links to all of the CSS and JS resources needed to render the game.
+* README.md: The GitHub readme file.
+* css/style.css: Contains all of the CSS needed to style the page.
+* images/...:  Image files, which are used when displaying the game. The images for the player and enemy character are going to be loaded from this folder.
+* js/app.js: Contains all objects required for game.
+* js/engine.js: Engine needed to run the game.
+* js/resources.js: Contain resources library.
