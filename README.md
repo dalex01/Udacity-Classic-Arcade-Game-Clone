@@ -1,5 +1,8 @@
 # Classic Arcade Game Clone
-===============================
+
+##Requirement
+
+Game is optimized for the screens with Y resolution (height) not less than 1080 pixels.
 
 ## Start
 
