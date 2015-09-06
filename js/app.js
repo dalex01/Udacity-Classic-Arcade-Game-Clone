@@ -54,12 +54,6 @@ Enemy.prototype.update = function(dt) {
     this.x = this.x > 700 ? getRandomInt(-100,-200) : this.x;
 };
 
-// Draw the enemy on the screen, required method for game
-//Enemy.prototype.render = function() {
-//    
-//    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-//};
-
 // Our player class
 var Player = function(x, y) {
     
@@ -75,17 +69,6 @@ var Player = function(x, y) {
 
 Player.prototype = Object.create(ObjectOnField.prototype);
 Player.prototype.constructor = Player;
-
-// Update the players's position
-// Actually function is not required as all movements are handled by handleInput function
-//Player.prototype.update = function() {
-//};
-
-// Draw the player on the screen, required method for game
-//Player.prototype.render = function() {
-//    
-//    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-//};
 
 // Handle input for player
 // All movements and character image changes are implemented in this function
