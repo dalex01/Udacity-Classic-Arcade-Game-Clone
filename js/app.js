@@ -1,3 +1,4 @@
+'use strict';
 // app.js
 // This file provides the main objects of the game and all
 // their properties. In this file is described the following
@@ -9,7 +10,7 @@
 
 // ObjectOnField class that position some object on the field
 var ObjectOnField = function(x, y) {
-    'use strict';
+    
     // Initial position of object
     this.sprite = '';
     this.x = x;
@@ -18,13 +19,13 @@ var ObjectOnField = function(x, y) {
 
 // Draw the object on the screen, required method for game
 ObjectOnField.prototype.render = function() {
-    'use strict';
+    
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Enemies our player must avoid
 var Enemy = function(x, y) {
-    'use strict';
+    
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -43,7 +44,7 @@ Enemy.prototype.constructor = Enemy;
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    'use strict';
+    
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -55,13 +56,13 @@ Enemy.prototype.update = function(dt) {
 
 // Draw the enemy on the screen, required method for game
 //Enemy.prototype.render = function() {
-//    'use strict';
+//    
 //    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 //};
 
 // Our player class
 var Player = function(x, y) {
-    'use strict';
+    
     
     ObjectOnField.call(this, x, y);
     // Initial player image
@@ -82,14 +83,14 @@ Player.prototype.constructor = Player;
 
 // Draw the player on the screen, required method for game
 //Player.prototype.render = function() {
-//    'use strict';
+//    
 //    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 //};
 
 // Handle input for player
 // All movements and character image changes are implemented in this function
 Player.prototype.handleInput = function(input) {
-    'use strict';
+    
     // Skip if input is incorrect or player is dead or player win
     if(!input || this.life === 0 || this.win) return;
 
@@ -133,7 +134,7 @@ Player.prototype.handleInput = function(input) {
 
 // Class for item (resource) shown on the field
 var Item = function(x, y) {
-    'use strict';
+    
     // Data structure of available items
     var itemImages = [
             'images/gem-blue.png',
@@ -186,7 +187,7 @@ Item.prototype.constructor = Item;
 
 // Random choose of items image
 Item.prototype.newSprite = function() {
-    'use strict';
+    
     // Data structure from which item is choosen
     var itemImages = [
             'images/gem-blue.png',
@@ -204,7 +205,7 @@ Item.prototype.newSprite = function() {
 
 // Setting of item type in accordance to its image
 Item.prototype.newType = function() {
-    'use strict';
+    
     // Data structure from which type is choosen
     var itemImagesType = {
             'images/gem-blue.png': 'blueGem',
@@ -222,7 +223,7 @@ Item.prototype.newType = function() {
 
 // Update item image, type and position if it was collected
 Item.prototype.update = function(dt) {
-    'use strict';
+    
     // Perform only if item was collected (collide with player)
     if (this.collide) {
         // Set number of ticks after which new item will be shown
@@ -261,7 +262,7 @@ Item.prototype.update = function(dt) {
 
 // Draw the item on the screen
 Item.prototype.render = function() {
-    'use strict';
+    
     // If timer is 0 - draw
     if (!this.timer) {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -270,7 +271,7 @@ Item.prototype.render = function() {
 
 // Class to draw score on all related inforamtion
 var Score = function() {
-    'use strict';
+    
     // Initial values for:
     // - collected items (zero at the start)
     // - number of times water was reached (zero at the start)
@@ -293,7 +294,7 @@ var Score = function() {
 
 // Add score to item with appropriate type if it was collected
 Score.prototype.addScore = function(type) {
-    'use strict';
+    
     this.score[type] += 1;
 };
 
@@ -301,14 +302,14 @@ Score.prototype.addScore = function(type) {
 // It is analog of update functions in other classes
 // It is called so for more clearness of its usage
 Score.prototype.clearScore = function() {
-    'use strict';
+    
     ctx.clearRect(20, 750, 750, 250);
     ctx.clearRect(5, 20, 750, 30);
 };
 
 // Draw all score area
 Score.prototype.render = function() {
-    'use strict';
+    
     // Draw all items if player is not win and not lose (if game continues)
     if(!this.lose && !this.win) {
 
@@ -425,6 +426,6 @@ document.addEventListener('keyup', function(e) {
 // Returns a random integer between min (inclusive) and max (inclusive)
 // Using Math.round() will give you a non-uniform distribution!
  function getRandomInt(min, max) {
-    'use strict';
+    
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
