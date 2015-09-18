@@ -6,7 +6,6 @@
  * to load the same image multiple times.
  */
 (function() {
-    
     var resourceCache = {};
     var loading = [];
     var readyCallbacks = [];
@@ -16,7 +15,6 @@
      * image. It will then call our private image loading function accordingly.
      */
     function load(urlOrArr) {
-        
         if(urlOrArr instanceof Array) {
             /* If the developer passed in an array of images
              * loop through each value and call our image
@@ -38,7 +36,6 @@
      * called by the public image loader function.
      */
     function _load(url) {
-        
         if(resourceCache[url]) {
             /* If this URL has been previously loaded it will exist within
              * our resourceCache array. Just return that image rather
@@ -51,7 +48,6 @@
              */
             var img = new Image();
             img.onload = function() {
-                
                 /* Once our image has properly loaded, add it to our cache
                  * so that we can simply return this image if the developer
                  * attempts to load this file in the future.
@@ -80,7 +76,6 @@
      * the same as calling load() on that URL.
      */
     function get(url) {
-        
         return resourceCache[url];
     }
 
@@ -88,7 +83,6 @@
      * for loading have in fact been completed loaded.
      */
     function isReady() {
-        
         var ready = true;
         for(var k in resourceCache) {
             if(resourceCache.hasOwnProperty(k) &&

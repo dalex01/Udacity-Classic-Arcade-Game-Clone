@@ -16,7 +16,6 @@
  */
 
 var Engine = (function(global) {
-    
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
@@ -36,7 +35,6 @@ var Engine = (function(global) {
      * and handles properly calling the update and render methods.
      */
     function main() {
-        
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
          * instructions at different speeds we need a constant value that
@@ -68,7 +66,6 @@ var Engine = (function(global) {
      * game loop.
      */
     function init() {
-        
         reset();
         lastTime = Date.now();
         main();
@@ -84,7 +81,6 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
     function update(dt) {
-        
         /* Update entities, collisions and win state anly if game continues
          * If player lose or win elements in the game should not be updated
          */
@@ -104,7 +100,6 @@ var Engine = (function(global) {
      * your render methods.
      */
     function updateEntities(dt) {
-        
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
@@ -121,7 +116,6 @@ var Engine = (function(global) {
      * they are just drawing the entire screen over and over.
      */
     function render() {
-        
         /* This array holds the relative URL to the image used
          * for that particular row of the game level.
          */
@@ -170,7 +164,6 @@ var Engine = (function(global) {
      * on your enemy and player entities within app.js
      */
     function renderEntities() {
-        
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
@@ -189,7 +182,6 @@ var Engine = (function(global) {
      * enemy or rock item
      */
     function reset() {
-        
         player.x = getRandomInt(0,6)*100;
         player.y = 563;
         player.win = false;
@@ -202,7 +194,6 @@ var Engine = (function(global) {
      * - player collect heart item (recieve one more life)
      */
     function checkCollisions() {
-        
         /* Iterate through all enemies and check if enemy position and player position
          * is the same
          */
@@ -286,7 +277,6 @@ var Engine = (function(global) {
      * - and water was reached not less than 3 times
      */
     function Win() {
-        
         if (score.score.blueGem >= 3 &&
             score.score.orangeGem >= 3 &&
             score.score.greenGem >= 3 &&
