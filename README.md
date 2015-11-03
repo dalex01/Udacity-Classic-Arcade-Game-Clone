@@ -1,13 +1,18 @@
 # Classic Arcade Game Clone
 
-##Requirement
+## About the project
 
+You was provided visual assets and a game loop engine; using these tools you add a number of entities to the game including the player characters and enemies to recreate the classic arcade game Frogger. All was done using JavaScript’s object oriented programming features.
+
+## Requirement
+
+Project was reviewed according to this [rubric](http://i.imgur.com/6qFLn8r.png).
 Game is optimized for the screens with Y resolution (height) not less than 1080 pixels.
 
-## Start
+## How to use
 
-* download all game files locally and start index.html file
-* or simply go to start page and play: http://dalex01.github.io/Udacity-Classic-Arcade-Game-Clone/
+* download all game files locally with command `git clone https://github.com/dalex01/fend-arcade-game.git` and start index.html file
+* or simply go to start page and play: http://dalex01.github.io/fend-arcade-game/
 
 To choose character press number from 1 to 5
 
